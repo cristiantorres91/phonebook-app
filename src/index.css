@@ -9,12 +9,16 @@
 body {
 	margin: 0;
 	font-family: "Roboto Slab", "sans-serif";
+	background-color: rgb(240, 240, 240);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 .navbar {
 	background-color: var(--primary-color);
+}
+.footer {
+	background-color: var(--secondary-color);
 }
 .btn-primary {
 	background-color: var(--secondary-color);
