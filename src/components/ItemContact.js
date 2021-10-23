@@ -1,30 +1,27 @@
 import React from "react";
+import { ContactInfo } from "./ContactInfo";
 
-export const ItemContact = () => {
+export const ItemContact = ({
+	contactData,
+	setDataToEdit,
+	deleteContact,
+}) => {
 	return (
-		<>
-			<div role="alert" className="alert-info">
-				<div className="d-flex justify-content-between align-items-center">
-					<div className="pt-2 ps-2">
-						<h5>Cristian Torres</h5>
-						<h6>71003568</h6>
-					</div>
-					<div>
-						<button
-							type="button"
-							className="btn btn-outline-success bt-sm mx-3"
-						>
-							<i className="bi bi-pencil"></i>
-						</button>
-						<button
-							type="button"
-							className="btn btn-outline-danger bt-sm mx-3"
-						>
-							<i className="bi bi-trash"></i>
-						</button>
-					</div>
-				</div>
-			</div>
-		</>
+		<div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			{contactData.length === 0 ? (
+				<span className="d-flex justify-content-center">
+					Not Contact 📞
+				</span>
+			) : (
+				contactData.map(contact => (
+					<ContactInfo
+						key={contact.id}
+						contact={contact}
+						setDataToEdit={setDataToEdit}
+						deleteContact={deleteContact}
+					/>
+				))
+			)}
+		</div>
 	);
 };
